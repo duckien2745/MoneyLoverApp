@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/iGiaodich"
+            android:checked="false"
+            android:icon="@drawable/ic_cashbook"
+            android:title="@string/cash_string" />
+
+        <item
+            android:id="@+id/iVaymuon"
+            android:checked="false"
+            android:icon="@drawable/ic_debts"
+            android:title="@string/debts_string" />
+
+        <item
+            android:id="@+id/iDanhmuc"
+            android:checked="false"
+            android:icon="@drawable/ic_category"
+            android:title="@string/category_string" />
+
+        <item android:title="Thông tin">
+            <menu>
+
+                <item
+                    android:id="@+id/iThongke"
+                    android:checked="false"
+                    android:icon="@drawable/ic_statistics"
+                    android:title="@string/statistics_string" />
+
+
+                <item
+                    android:id="@+id/iTaikhoan"
+                    android:checked="false"
+                    android:icon="@drawable/ic_account"
+                    android:title="@string/account_string" />
+
+            </menu>
+        </item>
+    </group>
+
+</menu>

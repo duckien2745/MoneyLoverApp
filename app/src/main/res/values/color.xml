@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_iMenu">#1b9a07</color>
+    <color name="color_bg_menu">#f9fbe7</color>
+    <color name="color_bg_toolBar">#96aa3b</color>
+</resources>
