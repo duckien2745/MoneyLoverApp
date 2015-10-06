@@ -29,7 +29,6 @@
         android:layout_width="270dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="55dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:headerLayout="@layout/header"
         app:menu="@menu/drawer" />

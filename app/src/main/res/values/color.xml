@@ -3,4 +3,7 @@
     <color name="color_iMenu">#1b9a07</color>
     <color name="color_bg_menu">#f9fbe7</color>
     <color name="color_bg_toolBar">#96aa3b</color>
+    <color name="color_targexts">#FF3333</color>
+    <color name="color_record">#0099FF</color>
+    <color name="color_date">#111111</color>
 </resources>
