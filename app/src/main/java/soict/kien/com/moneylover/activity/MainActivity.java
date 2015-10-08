@@ -16,8 +16,7 @@ import soict.kien.com.moneylover.R;
 import soict.kien.com.moneylover.fragment.FragmentGiaoDich;
 
 public class MainActivity extends AppCompatActivity {
-    public String example;
-
+    
     public Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
