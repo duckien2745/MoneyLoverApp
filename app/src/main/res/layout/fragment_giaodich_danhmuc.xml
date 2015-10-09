@@ -2,19 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DDDDDD"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:background="#DDDDDD">
+        android:background="#555555">
 
         <Spinner
             android:id="@+id/sp_danhmuc"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
-            android:background="#DDDDDD"
+            android:background="#555555"
             android:drawSelectorOnTop="true"></Spinner>
 
         <ImageView
@@ -30,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="#DDDDDD"
+        android:background="#fafafa"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -134,13 +135,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="15dp">
 
         <ListView
             android:id="@+id/lvGiaodich_DnhMuc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#DDDDDD"></ListView>
+            android:divider="#eeeeee"
+            android:dividerHeight="5dp"></ListView>
 
         <ImageView
             android:id="@+id/img_add"

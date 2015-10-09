@@ -1,10 +1,9 @@
 package soict.kien.com.moneylover.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +18,12 @@ import java.util.ArrayList;
 
 import soict.kien.com.moneylover.R;
 import soict.kien.com.moneylover.activity.MainActivity;
+import soict.kien.com.moneylover.activity.ThemGiaoDichActivity;
 import soict.kien.com.moneylover.adapter.ListViewAdapter;
 import soict.kien.com.moneylover.object.Month;
 import soict.kien.com.moneylover.object.object;
 
-public class FragmentGiaoDichDanhMuc extends Fragment {
+public class FragmentGiaoDich_DanhMuc extends Fragment {
     private ArrayAdapter<String> adapter;
     private Month m;
     private MainActivity mainActivity;
@@ -37,16 +37,17 @@ public class FragmentGiaoDichDanhMuc extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         m = new Month();
+
         mainActivity = (MainActivity) getActivity();
 
         obj = new object();
         arrayList = new ArrayList<>();
 
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
+        obj = new object("Mua sắm1", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt1");
         arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
+        obj = new object("Mua sắm2", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt1");
         arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
+        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt1");
         arrayList.add(obj);
         obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
         arrayList.add(obj);
@@ -67,24 +68,23 @@ public class FragmentGiaoDichDanhMuc extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.fragment_giaodich_danhmuc, container, false);
         final Spinner spinner = (Spinner) v.findViewById(R.id.sp_danhmuc);
         spinner.setAdapter(adapter);
 
         lv_Giaodich_danhmuc = (ListView) v.findViewById(R.id.lvGiaodich_DnhMuc);
-        ListViewAdapter listViewAdapter = new ListViewAdapter(arrayList, R.layout.item_lv_giaodich_danhmuc, mainActivity);
+        ListViewAdapter listViewAdapter = new ListViewAdapter(arrayList, R.layout.item_in_listview_giaodich_danhmuc, R.layout.item_child_in_listview_giaodich_danhmuc, mainActivity);
         lv_Giaodich_danhmuc.setAdapter(listViewAdapter);
 
         img_add = (ImageView) v.findViewById(R.id.img_add);
         img_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment_ThemGiaoDich fragment = new Fragment_ThemGiaoDich();
-                FragmentManager manager = mainActivity.getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
 
-                transaction.replace(R.id.frame, fragment);
-                transaction.commit();
+                Intent intent = new Intent(mainActivity, ThemGiaoDichActivity.class);
+                startActivity(intent);
+
             }
         });
 

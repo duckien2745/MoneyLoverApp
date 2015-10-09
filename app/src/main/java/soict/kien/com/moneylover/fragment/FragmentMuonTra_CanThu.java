@@ -10,12 +10,13 @@ import android.view.ViewGroup;
 import soict.kien.com.moneylover.R;
 
 /**
- * Created by DucKien2745 on 10/6/2015.
+ * Created by DucKien2745 on 10/7/2015.
  */
-public class Fragment_ThemGiaoDich extends Fragment {
+public class FragmentMuonTra_CanThu extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_them_giao_dich, container, false);
+        View view = inflater.inflate(R.layout.fragment_muontra_canthu, container, false);
+        return view;
     }
 }

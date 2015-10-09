@@ -40,12 +40,10 @@ public class FragmentGiaoDich extends android.support.v4.app.Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
 
             @Override
@@ -60,8 +58,8 @@ public class FragmentGiaoDich extends android.support.v4.app.Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(mainActivity.getSupportFragmentManager());
-        adapter.addFrag(new FragmentGiaoDichThoiGian(), "Thoi Gian");
-        adapter.addFrag(new FragmentGiaoDichDanhMuc(), "Danh Muc");
+        adapter.addFrag(new FragmentGiaoDich_ThoiGian(), "Thoi Gian");
+        adapter.addFrag(new FragmentGiaoDich_DanhMuc(), "Danh Muc");
         viewPager.setAdapter(adapter);
 
     }

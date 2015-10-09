@@ -8,12 +8,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import soict.kien.com.moneylover.R;
 import soict.kien.com.moneylover.fragment.FragmentGiaoDich;
+import soict.kien.com.moneylover.fragment.FragmentMuonTra;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.mToolbar);
         setSupportActionBar(toolbar);
+//        setToolbar(R.layout.toolbar_main);
 
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         drawerLayout = (DrawerLayout) findViewById(R.id.mainDrawer);
@@ -54,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.iVaymuon:
                         toolbar.setTitle(R.string.debts_string);
+
+                        FragmentMuonTra fg_muontra = new FragmentMuonTra();
+                        transaction.replace(R.id.frame, fg_muontra);
+                        transaction.commit();
                         return true;
                     case R.id.iDanhmuc:
                         toolbar.setTitle(R.string.category_string);
@@ -102,5 +111,33 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setToolbar(int res) {
+        toolbar.removeAllViews();
+        View logo = getLayoutInflater().inflate(res, null);
+        logo.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+        toolbar.addView(logo);
+        setSupportActionBar(toolbar);
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
+
+        if (res == R.layout.toolbar_main) {
+
+        } else if (res == R.layout.toolbar_them_giao_dich) {
+            ImageView view = (ImageView) findViewById(R.id.img_back);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("CLick", "Back");
+                    getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                }
+            });
+        }
+
     }
 }
