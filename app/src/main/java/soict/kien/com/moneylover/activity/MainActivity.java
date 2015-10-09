@@ -15,12 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.github.mikephil.charting.charts.LineChart;
+
 import soict.kien.com.moneylover.R;
 import soict.kien.com.moneylover.fragment.FragmentGiaoDich;
 import soict.kien.com.moneylover.fragment.FragmentMuonTra;
 
 public class MainActivity extends AppCompatActivity {
-    
+
+    public LineChart chart;
     public Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
