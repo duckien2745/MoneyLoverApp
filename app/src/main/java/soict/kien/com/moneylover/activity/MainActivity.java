@@ -20,7 +20,7 @@ import soict.kien.com.moneylover.fragment.FragmentGiaoDich;
 import soict.kien.com.moneylover.fragment.FragmentMuonTra;
 
 public class MainActivity extends AppCompatActivity {
-
+    
     public Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
