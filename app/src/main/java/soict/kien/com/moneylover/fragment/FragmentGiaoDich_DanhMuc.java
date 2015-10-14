@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,23 +15,20 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import soict.kien.com.moneylover.R;
+import soict.kien.com.moneylover.activity.ChiTietGiaoDichActivity;
 import soict.kien.com.moneylover.activity.MainActivity;
 import soict.kien.com.moneylover.activity.ThemGiaoDichActivity;
-import soict.kien.com.moneylover.adapter.ListViewAdapter;
+import soict.kien.com.moneylover.adapter.ListViewGiaoDichDanhMuc;
+import soict.kien.com.moneylover.object.ListObj;
 import soict.kien.com.moneylover.object.Month;
-import soict.kien.com.moneylover.object.object;
 
 public class FragmentGiaoDich_DanhMuc extends Fragment {
+    public ListView lv_Giaodich_danhmuc;
+    public ListViewGiaoDichDanhMuc listViewAdapter;
     private ArrayAdapter<String> adapter;
     private Month m;
     private MainActivity mainActivity;
-    private ListView lv_Giaodich_danhmuc;
-    private object obj;
-    private ArrayList<object> arrayList;
-    private ImageView img_add;
 
     @Override
 
@@ -40,30 +38,17 @@ public class FragmentGiaoDich_DanhMuc extends Fragment {
 
         mainActivity = (MainActivity) getActivity();
 
-        obj = new object();
-        arrayList = new ArrayList<>();
-
-        obj = new object("Mua sắm1", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt1");
-        arrayList.add(obj);
-        obj = new object("Mua sắm2", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt1");
-        arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt1");
-        arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
-        arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
-        arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
-        arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
-        arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
-        arrayList.add(obj);
-        obj = new object("Mua sắm", "2.500.000", "1.200.000", "2.500.000", "22-12-2015", "Tiền mặt");
-        arrayList.add(obj);
-
-        adapter = new ArrayAdapter<>(mainActivity, android.
+        adapter = new ArrayAdapter<>(getActivity(), android.
                 R.layout.simple_spinner_dropdown_item, m.month);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("Fragment", "onResume");
+        listViewAdapter.notifyDataSetChanged();
+        lv_Giaodich_danhmuc.setAdapter(listViewAdapter);
+
     }
 
     @Override
@@ -74,15 +59,29 @@ public class FragmentGiaoDich_DanhMuc extends Fragment {
         spinner.setAdapter(adapter);
 
         lv_Giaodich_danhmuc = (ListView) v.findViewById(R.id.lvGiaodich_DnhMuc);
-        ListViewAdapter listViewAdapter = new ListViewAdapter(arrayList, R.layout.item_in_listview_giaodich_danhmuc, R.layout.item_child_in_listview_giaodich_danhmuc, mainActivity);
+        listViewAdapter = new ListViewGiaoDichDanhMuc(ListObj.arrayList, R.layout.item_in_listview_giaodich_danhmuc, R.layout.item_child_in_listview_giaodich_danhmuc, mainActivity);
         lv_Giaodich_danhmuc.setAdapter(listViewAdapter);
 
-        img_add = (ImageView) v.findViewById(R.id.img_add);
+        lv_Giaodich_danhmuc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("checked", 0);
+                bundle.putInt("position", i);
+
+                Intent intent = new Intent(mainActivity, ChiTietGiaoDichActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        ImageView img_add = (ImageView) v.findViewById(R.id.img_add);
         img_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(mainActivity, ThemGiaoDichActivity.class);
+                Intent intent = new Intent(getActivity(), ThemGiaoDichActivity.class);
                 startActivity(intent);
 
             }

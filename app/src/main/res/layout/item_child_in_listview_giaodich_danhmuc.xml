@@ -38,7 +38,7 @@
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
             android:text="2.500.000"
-            android:textColor="@color/color_record"
+            android:textColor="@color/color_revenues"
             android:textSize="15dip"
             android:textStyle="bold" />
 

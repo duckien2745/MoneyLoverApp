@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textColor="@color/color_iMenu"
+            android:textSize="22dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_ConLai"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:text="5.000.000 VND"
+            android:textColor="@color/color_revenues"
+            android:textSize="20dip"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/mdtp_circle_background_dark_theme" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="Cần thu"
+            android:textColor="@color/mdtp_circle_background_dark_theme"
+            android:textSize="18dip" />
+
+        <TextView
+            android:id="@+id/tv_CanThu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:text="3.000.000 VND"
+            android:textColor="@color/color_revenues"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="Trạng thái"
+            android:textColor="@color/mdtp_circle_background_dark_theme"
+            android:textSize="18dip" />
+
+        <TextView
+            android:id="@+id/tv_TrangThaiCanThu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:text=" Đã trả 2.000.000 VND"
+            android:textColor="@color/mdtp_accent_color_dark"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</LinearLayout>

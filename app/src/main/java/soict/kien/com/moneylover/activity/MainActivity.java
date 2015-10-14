@@ -8,7 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,11 +15,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import soict.kien.com.moneylover.R;
+import soict.kien.com.moneylover.fragment.FragmentDanhMuc;
 import soict.kien.com.moneylover.fragment.FragmentGiaoDich;
 import soict.kien.com.moneylover.fragment.FragmentMuonTra;
 
 public class MainActivity extends AppCompatActivity {
-    
+
     public Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.mToolbar);
         setSupportActionBar(toolbar);
-//        setToolbar(R.layout.toolbar_main);
 
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         drawerLayout = (DrawerLayout) findViewById(R.id.mainDrawer);
@@ -66,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.iDanhmuc:
                         toolbar.setTitle(R.string.category_string);
+
+                        FragmentDanhMuc fg_danhmuc = new FragmentDanhMuc();
+                        transaction.replace(R.id.frame, fg_danhmuc);
+                        transaction.commit();
                         return true;
                     case R.id.iThongke:
                         toolbar.setTitle(R.string.statistics_string);
@@ -133,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("CLick", "Back");
                     getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 }
             });

@@ -11,14 +11,13 @@
         android:background="@color/color_bg_toolBar" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="40dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
             android:orientation="vertical"
             android:paddingLeft="30dp"
             android:paddingRight="30dp">
@@ -165,6 +164,7 @@
                         android:gravity="center"
                         android:text="Hủy"
                         android:textSize="20dip" />
+
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>

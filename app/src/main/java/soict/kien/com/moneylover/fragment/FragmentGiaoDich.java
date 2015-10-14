@@ -12,11 +12,6 @@ import soict.kien.com.moneylover.R;
 import soict.kien.com.moneylover.activity.MainActivity;
 import soict.kien.com.moneylover.adapter.ViewPagerAdapter;
 
-//import android.view.ViewGroup;
-
-/**
- * Created by DucKien2745 on 10/2/2015.
- */
 public class FragmentGiaoDich extends android.support.v4.app.Fragment {
 
     private MainActivity mainActivity;

@@ -5,38 +5,38 @@ public class object {
 
     private String name;
     private String date;
-    private Integer money;
+    private String money;
     private String form_pay;
     private String category;
     private String note;
-    private String sum_targets;
-    private String sum_record;
-    private String record;
+    private String sum_spend;
+    private String sum_revenues;
+    private String revenues;
     private String targets;
 
     public object() {
 
     }
 
-    public object(String category, String sum_record, String sum_targets, String record, String date, String form_pay) {
+    public object(String category, String sum_revenues, String sum_spend, String revenues, String date, String form_pay) {
         this.category = category;
-        this.sum_record = sum_record;
-        this.sum_targets = sum_targets;
-        this.record = record;
+        this.sum_revenues = sum_revenues;
+        this.sum_spend = sum_spend;
+        this.revenues = revenues;
         this.date = date;
         this.form_pay = form_pay;
     }
 
-    public object(String name, String date, Integer money, String form_pay, String category, String note, String sum_targets, String sum_record, String record, String targets) {
+    public object(String name, String date, String money, String form_pay, String category, String note, String sum_spend, String sum_revenues, String revenues, String targets) {
         this.name = name;
         this.date = date;
         this.money = money;
         this.form_pay = form_pay;
         this.category = category;
         this.note = note;
-        this.sum_targets = sum_targets;
-        this.sum_record = sum_record;
-        this.record = record;
+        this.sum_spend = sum_spend;
+        this.sum_revenues = sum_revenues;
+        this.revenues = revenues;
         this.targets = targets;
     }
 
@@ -56,11 +56,11 @@ public class object {
         this.date = date;
     }
 
-    public Integer getMoney() {
+    public String getMoney() {
         return money;
     }
 
-    public void setMoney(Integer money) {
+    public void setMoney(String money) {
         this.money = money;
     }
 
@@ -88,28 +88,28 @@ public class object {
         this.note = note;
     }
 
-    public String getSum_targets() {
-        return sum_targets;
+    public String getSum_spend() {
+        return sum_spend;
     }
 
-    public void setSum_targets(String sum_targets) {
-        this.sum_targets = sum_targets;
+    public void setSum_spend(String sum_spend) {
+        this.sum_spend = sum_spend;
     }
 
-    public String getSum_record() {
-        return sum_record;
+    public String getSum_revenues() {
+        return sum_revenues;
     }
 
-    public void setSum_record(String sum_record) {
-        this.sum_record = sum_record;
+    public void setSum_revenues(String sum_recordsum_revenues) {
+        this.sum_revenues = sum_revenues;
     }
 
-    public String getRecord() {
-        return record;
+    public String getRevenues() {
+        return revenues;
     }
 
-    public void setRecord(String record) {
-        this.record = record;
+    public void setRevenues(String revenues) {
+        this.revenues = revenues;
     }
 
     public String getTargets() {

@@ -23,25 +23,25 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_sum_targexts"
+            android:id="@+id/tv_sum_spend"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
             android:text="1.200.000"
-            android:textColor="@color/color_targexts"
+            android:textColor="@color/color_spend"
             android:textSize="18dip"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_sum_record"
+            android:id="@+id/tv_sum_revenues"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="12dp"
-            android:layout_toLeftOf="@id/tv_sum_targexts"
+            android:layout_toLeftOf="@id/tv_sum_spend"
             android:gravity="center_vertical"
             android:text="2.500.000"
-            android:textColor="@color/color_record"
+            android:textColor="@color/color_revenues"
             android:textSize="16dip"
             android:textStyle="bold" />
     </RelativeLayout>

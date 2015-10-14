@@ -18,8 +18,10 @@
         </activity>
         <activity
             android:name=".activity.ThemGiaoDichActivity"
-            android:label="Thêm Giao Dịch"></activity>
-
+            android:label="Thêm Giao Dịch" />
+        <activity
+            android:name=".activity.ChiTietGiaoDichActivity"
+            android:label="CHi Tiết Giao Dịch" />
     </application>
 
 </manifest>
