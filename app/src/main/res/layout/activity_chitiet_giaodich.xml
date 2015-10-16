@@ -23,7 +23,7 @@
 
             <include
                 android:id="@+id/include_content_Chitiet"
-                layout="@layout/layout_contemt_chi_tiet_giao_dich"
+                layout="@layout/layout_content_chi_tiet_giao_dich"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

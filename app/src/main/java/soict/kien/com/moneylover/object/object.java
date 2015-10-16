@@ -18,6 +18,14 @@ public class object {
 
     }
 
+    public object(String date, String money, String form_pay, String note, String category) {
+        this.date = date;
+        this.money = money;
+        this.form_pay = form_pay;
+        this.note = note;
+        this.category = category;
+    }
+
     public object(String category, String sum_revenues, String sum_spend, String revenues, String date, String form_pay) {
         this.category = category;
         this.sum_revenues = sum_revenues;

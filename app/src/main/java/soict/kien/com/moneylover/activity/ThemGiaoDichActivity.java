@@ -1,5 +1,6 @@
 package soict.kien.com.moneylover.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -46,6 +47,7 @@ public class ThemGiaoDichActivity extends AppCompatActivity implements DatePicke
 
         etDate.setOnClickListener(this);
         btnSave.setOnClickListener(this);
+        etGroup.setOnClickListener(this);
 
     }
 
@@ -58,7 +60,7 @@ public class ThemGiaoDichActivity extends AppCompatActivity implements DatePicke
         group = etGroup.getText().toString();
         note = etNote.getText().toString();
 
-        obj = new object(group, "1.500.000", "1.200.000", moneys, date, formPay);
+        obj = new object(date, moneys, formPay, note, group);
         ListObj.arrayList.add(obj);
 
     }
@@ -111,6 +113,21 @@ public class ThemGiaoDichActivity extends AppCompatActivity implements DatePicke
         if (view == btnSave) {
             setData();
             finish();
+        }
+        if (view == etGroup) {
+            Intent intent = new Intent(ThemGiaoDichActivity.this, DanhMucActivity.class);
+            startActivityForResult(intent, 2);
+        }
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2) {
+            String message = data.getStringExtra("CATEGORY");
+            etGroup.setText(message);
         }
     }
 }

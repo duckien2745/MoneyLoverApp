@@ -60,11 +60,11 @@ public class ListViewGiaoDichThoiGian extends BaseAdapter {
 
         TextView tv_date = (TextView) subView.findViewById(R.id.tv_date);
         TextView tv_form_pay = (TextView) subView.findViewById(R.id.tv_form_pay);
-        TextView tv_record = (TextView) subView.findViewById(R.id.tv_record);
+        TextView tv_money = (TextView) subView.findViewById(R.id.tv_money);
 
         tv_date.setText(araylist.get(i).getCategory());
         tv_form_pay.setText(araylist.get(i).getForm_pay());
-        tv_record.setText(araylist.get(i).getRevenues());
+        tv_money.setText(araylist.get(i).getMoney());
 
         tv_category.setText(araylist.get(i).getDate());
         tv_sum_revenues.setText(araylist.get(i).getSum_revenues());

@@ -138,6 +138,7 @@
         android:layout_marginTop="15dp">
 
         <ListView
+
             android:id="@+id/lvGiaodich_DnhMuc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -21,7 +21,10 @@
             android:label="Thêm Giao Dịch" />
         <activity
             android:name=".activity.ChiTietGiaoDichActivity"
-            android:label="CHi Tiết Giao Dịch" />
+            android:label="Chi Tiết Giao Dịch" />
+        <activity
+            android:name=".activity.DanhMucActivity"
+            android:label="Danh Mục" />
     </application>
 
 </manifest>
